@@ -11,22 +11,14 @@ class IcalGenerator {
       $this->text = true;
     }
     if (isset($_GET['remove'])) {
-      $this->remove = $this->csvToArray($_GET['remove']);
+      $this->remove = str_getcsv($_GET['remove']);
     }
     else {
       $this->remove = array('AD2', 'DEB2');
     }
   }
   
-  private function csvToArray($input) {
-    // TODO: Improve? (like str_getcsv()? (PHP5.3+))
-    if (empty($input)) {
-      return array();
-    }
-    return explode(',', $input);
-  }
-  
-  public function generate(SG_iCalReader $ical) {
+  public function generate($ical) {
     if ($this->text) {
       header('Content-Type:text/plain');
     }
@@ -41,8 +33,7 @@ class IcalGenerator {
       include 'views/vcalendar.php';
     }
   }
-
-  public function viewEvent(SG_iCal_VEvent $event) {
+  public function viewEvent($event) {
     $summary = $event->getSummary();
     foreach ($this->remove as $needle) {
       if (strpos($summary, $needle) !== false) {
