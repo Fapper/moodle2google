@@ -1,9 +1,7 @@
 <?php
 
 class IcalGenerator {
-
   private $text = false;
-  
   private $remove = array();
 
   public function __construct() {
@@ -12,9 +10,6 @@ class IcalGenerator {
     }
     if (isset($_GET['remove'])) {
       $this->remove = str_getcsv($_GET['remove']);
-    }
-    else {
-      $this->remove = array('AD2', 'DEB2');
     }
   }
   
