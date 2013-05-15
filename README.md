@@ -38,8 +38,8 @@ Here are a few steps to get this running on your own server:
 
 TODO
 -------
-[] Keep a consistant calendar
-[] Test on other moodle installs
+If I ever get time...
+- [] Keep a consistant calendar
 
 License
 -------
