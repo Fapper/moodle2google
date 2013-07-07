@@ -53,7 +53,7 @@ class IcalGenerator {
       $description .= $note . '\n';
     if($thing != null)
       $description .= $thing . '\n';
-    $description .= utf8_decode($event->getDescription());
+    $description .= str_replace(array("\r", "\n"), '', utf8_decode($event->getDescription()));
 
     if($course == null)
       $course = $description;
