@@ -32,6 +32,7 @@ Running
 Here are a few steps to get this running on your own server:
   * Requires PHP 5.3+
   * In config.php, fill in the USERNAME and AUTHTOKEN fields found by visiting the Moodle calendar, scrolling to the bottom, and expanding the iCal link.
+  * Move URL, USERNAME, and AUTHTOKEN to GET parameters so it works with multiple calendars on the entire Moodle system?
 
 TODO
 -------
