@@ -1,19 +1,12 @@
 <?php
 
+require_once(__DIR__.'/intouch-iCalendar/intouch/ical/iCal.php');
+use intouch\ical\iCal;
+require_once(__DIR__.'/config.php');
 
-define('PATH', dirname(__FILE__));
-
-define('USERNAME', '');
-define('AUTHTOKEN', '');
-
-function p($path) {
-  return PATH . '/' . $path;
-}
-
-include 'SG-iCalendar-replacements/SG_iCal.php';
-
-$ical = new SG_iCalReader(
-  'http://sict.moodle.aau.dk/calendar/export_execute.php'
+$ical = new iCal(
+  DOMAIN 
+  . '/calendar/export_execute.php'
   . '?preset_what=all&preset_time=recentupcoming&username='
   . urlencode(USERNAME) . '&authtoken='
   . urlencode(AUTHTOKEN)
