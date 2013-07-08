@@ -1,3 +1,4 @@
+<?php echo "\r\n"; ?>
 BEGIN:VEVENT<?php echo "\r\n"; ?>
 UID:<?php echo $event->getUid(); ?> <?php echo "\r\n"; ?>
 SUMMARY:<?php echo $course; ?> <?php echo "\r\n"; ?>

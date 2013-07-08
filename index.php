@@ -2,7 +2,10 @@
 
 require_once(__DIR__.'/intouch-iCalendar/intouch/ical/iCal.php');
 use intouch\ical\iCal;
-require_once(__DIR__.'/config.php');
+
+define("DOMAIN", $_GET["moodle"]);
+define("USERNAME", $_GET["u"]);
+define("AUTHTOKEN", $_GET["token"]);
 
 $ical = new iCal(
   DOMAIN 
