@@ -14,13 +14,13 @@ Simply follow the two steps below.
 
 * Apply your **username**, **moodle token**, and **moodle url** (to get these values, see below) in any order to the location where this program resides, like so (note: these credentials aren't valid):
 
-http://m2g.martinbmadsen.dk?u=mbma11@student.aau.dk&token= e87d8abdd212e22cda3e53a687c5a6abdfd83db9&moodle=moodle=sict.moodle.aau.dk
+** http://m2g.martinbmadsen.dk?u=mbma11@student.aau.dk&token=e87d8abdd212e22cda3e53a687c5a6abdfd83db9&moodle=moodle=sict.moodle.aau.dk
 
 This returns an .ics file with your moodle calendar, which Google Calendar, or any other calendar app, can parse. All you have to do is add the above url as one of your calendars, and it will seamlessly update as courses get added, moved, or removed by whoever administrates your moodle.
 
 * If you wish to remove a course, you merely supply a comma-separated list of the course names (these will be the titles of the events in Google Calendar) like so:
 
-http://m2g.martinbmadsen.dk?u=mbma11@student.aau.dk&token= e87d8abdd212e22cda3e53a687c5a6abdfd83db9&moodle=moodle=sict.moodle.aau.dk&remove=AD2,DEB2,SU(ENG)
+** http://m2g.martinbmadsen.dk?u=mbma11@student.aau.dk&token=e87d8abdd212e22cda3e53a687c5a6abdfd83db9&moodle=moodle=sict.moodle.aau.dk&remove=AD2,DEB2,SU(ENG)
 
 And voilá, you're done!
 
