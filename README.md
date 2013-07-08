@@ -27,7 +27,9 @@ Simply follow the two steps below.
 ?u=mbma11@student.aau.dk  
 &token=e87d8abdd212e22cda3e53a687c5a6abdfd83db9  
 &moodle=sict.moodle.aau.dk  
-&remove=AD2,DEB2,SU(ENG)](http://m2g.martinbmadsen.dk?u=mbma11@student.aau.dk&token=e87d8abdd212e22cda3e53a687c5a6abdfd83db9&moodle=sict.moodle.aau.dk&remove=AD2,DEB2,SU(ENG))
+&remove=AD2,DEB2](http://m2g.martinbmadsen.dk?u=mbma11@student.aau.dk&token=e87d8abdd212e22cda3e53a687c5a6abdfd83db9&moodle=sict.moodle.aau.dk&remove=AD2,DEB2)
+
+    In this case, two versions of AD and DEB were running at the same time, where I only was attending the first version. Hence I don't want the other scheduled lectures in those courses polluting my calendar and have now removed them from the stream.
 
 And voilá, you're done!
 
@@ -42,7 +44,7 @@ Also, adding ``?debug`` to the above url will set the Content-Type to ``text/pla
 
 Running
 -------
-To get this running on your own server, you merely need to be running PHP 5.3+.
+To get this running on your own server, you merely need to be using PHP 5.3+.
 
 TODO
 -------
