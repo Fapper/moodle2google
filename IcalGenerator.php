@@ -4,13 +4,9 @@ class IcalGenerator {
   private $text = false;
   private $remove = array();
 
-  public function __construct() {
-    if (isset($_GET['debug'])) {
-      $this->text = true;
-    }
-    if (isset($_GET['remove'])) {
-      $this->remove = str_getcsv($_GET['remove']);
-    }
+  public function __construct($debug = false, $remove = '') {
+    $this->text = $debug;
+    $this->text = str_getcsv($remove);
   }
   
   public function generate($ical) {

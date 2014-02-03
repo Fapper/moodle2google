@@ -17,7 +17,7 @@ $ical = new iCal(
 
 include 'IcalGenerator.php';
 
-$icalGenerator = new IcalGenerator();
+error_log(DOMAIN, 0);
 
+$icalGenerator = new IcalGenerator($_GET["debug"], $_GET["remove"]);
 $icalGenerator->generate($ical);
-
