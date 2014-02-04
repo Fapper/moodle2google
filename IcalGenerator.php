@@ -4,18 +4,21 @@ class IcalGenerator {
   private $text = false;
   private $remove = array();
 
-  public function __construct($debug = false, $remove = '') {
-    $this->text = $debug;
-    $this->text = str_getcsv($remove);
+  public function __construct($debug, $remove) {
+    if(isset($debug)) {
+      $this->text = true;
+    }
+    if(isset($remove)) {
+      $this->remove = $remove;
+    }
   }
   
   public function generate($ical) {
-    if ($this->text) {
+    if ($this->text)
       header('Content-Type:text/plain; charset=utf-8');
-    }
-    else {
+    else
       header('Content-Type:text/calendar; charset=utf-8');
-    }
+
     $events = $ical->getEvents();
     if (!is_array($events)) {
       echo 'ERROR';
