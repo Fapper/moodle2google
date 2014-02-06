@@ -5,12 +5,10 @@ class IcalGenerator {
   private $remove = array();
 
   public function __construct($debug, $remove) {
-    if(isset($debug)) {
+    if(isset($debug))
       $this->text = true;
-    }
-    if(isset($remove)) {
+    if(isset($remove))
       $this->remove = $remove;
-    }
   }
   
   public function generate($ical) {
@@ -20,21 +18,19 @@ class IcalGenerator {
       header('Content-Type:text/calendar; charset=utf-8');
 
     $events = $ical->getEvents();
-    if (!is_array($events)) {
+    if (!is_array($events))
       echo 'ERROR';
-    }
-    else {
+    else
       include 'views/vcalendar.php';
-    }
   }
 
   public function viewEvent($event) {
     $summary = $event->getSummary();
     foreach ($this->remove as $needle) {
-      if (strpos($summary, $needle) !== false) {
+      if (strpos($summary, $needle) !== false)
         return;
-      }
     }
+
     $summaryArray = explode(' - ', utf8_decode($event->getSummary()));
     list( , $course) = explode(' ', $summaryArray[0], 2);
     preg_match('/^(.+?) (\(.+?\))/', $course, $matches);

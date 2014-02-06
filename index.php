@@ -7,6 +7,9 @@ define("DOMAIN", $_GET["moodle"]);
 define("USER", $_GET["u"]);
 define("AUTHTOKEN", $_GET["token"]);
 
+# Noob, should set dynamically according to server
+date_default_timezone_set('Europe/Copenhagen');
+
 $ical = new iCal(
   DOMAIN 
   . '/calendar/export_execute.php'
