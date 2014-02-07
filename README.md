@@ -13,34 +13,37 @@ Usage
 -------
 Simply follow the two steps below.
 
-* Apply your **username**, **moodle token**, and **moodle url** (to get these values, see below) in any order to the location where this program resides, like so (note: these credentials aren't valid):
+* Apply your **user ID**, **moodle token**, and **moodle url** (to get these values, see below) in any order to the location where this program resides, like so (note: these credentials aren't valid):
 
-    * [m2g.martinbmadsen.dk  
-?u=mbma11@student.aau.dk  
+    * m2g.martinbmadsen.dk  
+?u=8399
 &token=e87d8abdd212e22cda3e53a687c5a6abdfd83db9  
-&moodle=sict.moodle.aau.dk](http://m2g.martinbmadsen.dk?u=mbma11@student.aau.dk&token=e87d8abdd212e22cda3e53a687c5a6abdfd83db9&moodle=sict.moodle.aau.dk)
+&moodle=sict.moodle.aau.dk
 
     This returns an .ics file with your moodle calendar, which Google Calendar, or any other calendar app, can parse. All you have to do is add the above url as one of your calendars, and it will seamlessly update as courses get added, moved, or removed by whoever administrates your moodle.
 
-* If you wish to remove a course, you merely supply a comma-separated list of the course names (these will be the titles of the events in Google Calendar) like so:
-    * [m2g.martinbmadsen.dk  
-?u=mbma11@student.aau.dk  
+* If you wish to **remove** a course or multiple courses, you merely supply a comma-separated list of the course names (these will be the titles of the events in Google Calendar) like so:
+    * m2g.martinbmadsen.dk  
+?u=8399
 &token=e87d8abdd212e22cda3e53a687c5a6abdfd83db9  
-&moodle=sict.moodle.aau.dk  
-&remove=AD2,DEB2](http://m2g.martinbmadsen.dk?u=mbma11@student.aau.dk&token=e87d8abdd212e22cda3e53a687c5a6abdfd83db9&moodle=sict.moodle.aau.dk&remove=AD2,DEB2)
+&moodle=moodle.aau.dk  
+&remove=AD2,DEB2
 
     In this case, two versions of AD and DEB were running at the same time, where I only was attending the first version. Hence I don't want the other scheduled lectures in those courses polluting my calendar and have now removed them from the stream.
 
 And voilá, you're done!
 
+Getting required parameters
+-------
+Getting the required parameters for moodle2google is non-trivial. Below is a guide on how to get them:
+
+1. Log in to your insitution's moodle website and visit the calendar. For AAU's moodle, it's [moodle.aau.dk/calendar/view.php](https://www.moodle.aau.dk/calendar/view.php).
+2. Scroll to the bottom of the page and right click on the orange __ical__ icon and copy the link address. An example of such a url is: https://www.moodle.aau.dk/calendar/export_execute.php?preset_what=all&preset_time=recentupcoming&userid=8399&authtoken=8c2dd7ca64ac78efc63242c2314e062736c12a0c.
+3. The __moodle__ parameter is the root url, so in this case: [moodle.aau.dk](https://www.moodle.aau.dk). Your __userid__ and __authtoken__ are used as __u__ and __authtoken__ in moodle2google, respectively.
+
 Other information
 -------
-Here is how to get the needed parameters:
-* **username** is simply the login you use to access moodle.
-* **authtoken** can be found by visiting whatever site hosts your installation of moodle, logging in, and clicking on the calendar. Then scroll down and click on "export calendar" followed by "show URL for this calendar", where you then can see the authtoken parameter in the generated url. This is the authtoken you use.
-* **moodle** is the root address to the site hosting the moodle installation. Examples from Aalborg University are: http://ses.moodle.aau.dk, http://sict.moodle.aau.dk, http://sadp.moodle.aau.dk, and so on...
-
-Also, adding ``?debug`` to the above url will set the Content-Type to ``text/plain`` instead of ``text/calendar`` so you can see the generated file before downloading it.
+Adding ``?debug=true`` to the above url will set the Content-Type to ``text/plain`` instead of ``text/calendar`` so you can see the generated file before downloading it.
 
 Running
 -------
