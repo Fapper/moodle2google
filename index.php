@@ -8,7 +8,7 @@ define("USER", $_GET["u"]);
 define("AUTHTOKEN", $_GET["token"]);
 
 # Noob, should set dynamically according to server
-date_default_timezone_set('Europe/Copenhagen');
+date_default_timezone_set('UTC');
 
 $ical = new iCal(
   DOMAIN 
